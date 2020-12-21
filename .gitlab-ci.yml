@@ -1,0 +1,39 @@
+image: maven:3.6.3-jdk-8
+
+variables:
+  MAVEN_CLI_OPTS: "--batch-mode"
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+cache:
+  paths:
+    - .m2/repository/
+    - target/
+
+build:
+  stage: build
+  script:
+    - mvn $MAVEN_CLI_OPTS clean compile
+
+test:
+  stage: test
+  dependencies:
+    - build
+  script:
+    - mvn $MAVEN_CLI_OPTS verify
+  artifacts:
+    when: always
+    paths:
+      - /builds/daria/petstore/target/site/serenity/
+    expire_in: 30 days
+
+pages:
+  stage: test
+  script:
+    - pwd
+    - cd /
+    - ls -R
+  artifacts:
+    when: always
+    paths:
+      - public
+    expire_in: 30 days
