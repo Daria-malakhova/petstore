@@ -25,7 +25,7 @@ For each run the Test Report is saved and stored for 30 days. The report can be 
 application returns StatusCode 200 even when it should not. Because of this most of the positive and negative test will fail the StatusCode check.
 
 - How to add new tests
-> * Add a new Feature file/or add new Scenarios to existing feature file.
-> * Extract common functionality in Step Libraries.
-> * Write new test Scenarios in Gherkin
-> * Automate the scenario steps using Java
+Add a new Feature file/or add new Scenarios to existing feature file.
+Extract common functionality in Step Libraries.
+Write new test Scenarios in Gherkin
+Automate the scenario steps using Java
