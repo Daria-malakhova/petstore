@@ -18,7 +18,7 @@ The report will contain information about:
 - Run in CI
 The CI pipeline was created in GitLab.
 
-The overview of all the runs is available here https:https://gitlab.com/Daria-malakhova/petstore/-/pipelines
+The overview of all the runs is available here https://gitlab.com/Daria-malakhova/petstore/-/pipelines
 For each run the Test Report is saved and stored for 30 days. The report can be downloaded locally or browsed directly in GitLab.
 
 - Issues
