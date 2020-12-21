@@ -1,58 +1,30 @@
-# petstore
+# Petstore
 
 [![CI](https://gitlab.com/Daria-malakhova/petstore/badges/main/pipeline.svg)](https://gitlab.com/Daria-malakhova/petstore/-/commits/main)
 
-# Run tests locally
-> * ```mvn clean verify``` - will default to QA environment
+- Run tests locally
+```mvn clean verify``` - will default to QA environment
 
-# Check report
+- Check report
 After the tests are run a report is generated. The report link is displayed at the end of the log.
 file://projects_folder/target/site/serenity/index.html. The link can be opened in a browser. 
 
 The report will contain information about:
-> * Features that were tested
-> * Scenarios for every Feature
-> * Test Result for each Scenario
-> * the logged request and response, with all details
+-Features that were tested
+-Scenarios for every Feature
+-Test Result for each Scenario
+-the logged request and response, with all details
 
-# Run in CI
+- Run in CI
 The CI pipeline was created in GitLab.
 
 The overview of all the runs is available here https:https://gitlab.com/Daria-malakhova/petstore/-/pipelines
 For each run the Test Report is saved and stored for 30 days. The report can be downloaded locally or browsed directly in GitLab.
 
+- Issues
+application returns StatusCode 200 even when it should not. Because of this most of the positive and negative test will fail the StatusCode check.
 
-# Issues
-* application returns StatusCode 200 even when it should not. Because of this most of the positive and negative test will fail the StatusCode check.
-
-
-# Framework structure
-> * Configurations folder
-
-Contains the configurations.json file that allows the framework to be configured for different environments. At the moment, it allows the definition of API Base Url per environment.
-> * Runner class (CucumberTestSuite)
-
-The Test Runner helps running the feature files and it connects feature files with the Step Definition classes
-> * Models & Builders
-
-Contain classes that that help with creating and parsing data.
-> * Steplibs
-
-Contains code that is used by multiple step definition methods, to prevent duplication and to keep files manageable in size.  
-> * Step Definition files
-
-Classes that hold the code that automates the steps from the Feature files.
-> * Features files
-
-Plain language files, that use Gherkin syntax, to define the expected behaviour of the application.
-> * Utilities
-
-A location that holds classes that define constants or read the configuration the file
-> * EndPoints class
-
-Helper class to hold the API endpoints that we want to test.
-
-# How to add new tests
+- How to add new tests
 > * Add a new Feature file/or add new Scenarios to existing feature file.
 > * Extract common functionality in Step Libraries.
 > * Write new test Scenarios in Gherkin
