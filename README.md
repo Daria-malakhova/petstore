@@ -3,7 +3,7 @@
 [![CI](https://gitlab.com/Daria-malakhova/petstore/badges/main/pipeline.svg)](https://gitlab.com/Daria-malakhova/petstore/-/commits/main)
 
 - Run tests locally
-```mvn clean verify``` - will default to QA environment
+```mvn clean verify```
 
 - Check report
 After the tests are run a report is generated. The report link is displayed at the end of the log.
